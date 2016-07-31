@@ -1,0 +1,44 @@
+html {
+	background: url('../images/login_background.jpg');
+	background-size: cover;
+	font-size: 20px;
+	text-align: center;
+}
+label {
+	color: #999;
+	color: black;
+}
+h3{
+	color: blue;
+}
+#error
+{
+	color: red;
+}
+
+.loginform {
+	width: 500px;
+	border: 5px solid green;
+	margin: 50px auto;
+	margin-top: 150px;
+	padding-bottom: 15px;
+	background-color: white;
+}
+
+.loginform input:not([type=submit]) {
+	padding: 5px;
+	margin-right: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	
+}
+.loginform input[type=submit] {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	background: #64c8ef; 
+	color: #fff;
+	padding: 5px 15px;
+	margin-right: 0;
+	margin-top: 15px;
+	border-radius: 3px;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}

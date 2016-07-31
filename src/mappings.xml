@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>   
+   <class name="com.fallarm.database.Person_information" table="person_information">
+    <meta attribute="class-description">
+      this class contains person information
+    </meta>
+    
+    <id name="pid" column="pid" type="string"/>
+    
+    <property name="fname" column="fname" type="string"/>
+    <property name="lname" column="lname" type="string"/>
+    <property name="email" column="email" type="string"/>
+    <property name="phone" column="phone" type="string"/>
+    <property name="gender" column="gender" type="char"/>
+    <property name="pwd" column="pwd" type="string"/>
+    <property name="nurse_id" column="nurse_id" type="string"/>
+    <property name="deviceid" column="deviceid" type="string"/>
+       
+   </class>
+   
+   <class name="com.fallarm.database.Popup" table="popup">
+    <meta attribute="class-description">
+      this class contains popup information
+    </meta>
+    
+    <composite-id>
+    	<key-property name="datato" column="datato" type="string"/>
+    	<key-property name="datafrom" column="datafrom" type="string"/>
+    </composite-id>
+       
+   </class>
+   
+   
+   <class name="com.fallarm.database.Device_data" table="Device_data">
+    <meta attribute="class-description">
+      this class contains data came from mobile application
+    </meta>
+    
+    <composite-id>
+    	<key-property name="deviceid" column="deviceid" type="string"/>
+    	<key-property name="time" column="time" type="java.util.Date"/>
+    </composite-id>
+    <property name="pid" column="pid" type="string"/>
+    <property name="a1" column="a1" type="double"/>
+    <property name="a2" column="a2" type="double"/>
+<property name="a3" column="a3" type="double"/>
+<property name="g1" column="g1" type="double"/>
+<property name="g2" column="g2" type="double"/>
+<property name="g3" column="g3" type="double"/>
+<property name="x" column="x" type="double"/>
+<property name="y" column="y" type="double"/>
+<property name="severity" column="severity" type="int"/>
+<property name="comments" column="comments" type="string"/>       
+   </class>
+</hibernate-mapping>
