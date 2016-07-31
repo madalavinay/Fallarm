@@ -24,7 +24,7 @@ public class EmailService {
 		properties.put("mail.smtp.port", "465");
 		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("npufallarm@gmail.com", "CsNpU595");
+				return new PasswordAuthentication(email, password);
 			}
 		});
 		return session;
@@ -36,7 +36,7 @@ public class EmailService {
 
 		try {
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("npufallarm@gmail.com"));
+			message.setFrom(new InternetAddress(fromemail));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(p.getEmail()));
 			message.setSubject("Fallarm account created.");
 			message.setContent("<P>Hello, " + p.getFname() + " " + p.getLname() + "</p><p>your fallarm username="
@@ -52,7 +52,7 @@ public class EmailService {
 
 		try {
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("npufallarm@gmail.com"));
+			message.setFrom(new InternetAddress(fromemail));
 			Person_information p = new PersonManager().listPersonDetailsById(pi.getNurse_id());
 			String[] mailAddressTo = { pi.getEmail(), p.getEmail() };
 			int noOfRecipients = 1;
@@ -80,7 +80,7 @@ public class EmailService {
 
 		try {
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("npufallarm@gmail.com"));
+			message.setFrom(new InternetAddress(fromemail));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
 			message.setSubject("user verified");
 			message.setContent("<P>Hello, " + name + "</p><p>your fallarm Account is verified. You data is being Recorded.</p>", "text/html");
