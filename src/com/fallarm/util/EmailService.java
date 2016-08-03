@@ -83,7 +83,7 @@ public class EmailService {
 			message.setFrom(new InternetAddress(fromemail));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
 			message.setSubject("user verified");
-			message.setContent("<P>Hello, " + name + "</p><p>your fallarm Account is verified. You data is being Recorded.</p>", "text/html");
+			message.setContent("<P> Hello, " + name + "</p><p>your fallarm Account is verified. You data is being Recorded.</p>", "text/html");
 			Transport.send(message);
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
